@@ -16,4 +16,35 @@ import studio6.tests.RecursiveToReversedTestSuite;
 		RecursiveToReversedTestSuite.class, })
 public class MethodsTestSuite {
 
+	
+public static int countOdd(int[] array){
+	int count = 0;
+	for(int i = 0; i < array.length; i++){
+		if(array [ i ] % 2 != 0) {
+			count ++;
+		}
+	}
+	return count;
+	
+}
+
+public static int geometricSum(int[]array) {
+	int i = 0;
+	return geometricSumHelper(array, i);
+}
+
+public static int geometricSumHelper(int[] array, int i) {
+	if(i >= array.length) { // base case
+		return 0;
+	
+		
+	}
+	else {
+		if(array[i] % 2 != 0) {
+			return 1 + geometricSumHelper(array, i+1);
+		}
+		return geometricSumHelper(array, i+1);
+	}
+}
+	
 }
